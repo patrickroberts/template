@@ -20,11 +20,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Install and Publish
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: 'https://registry.npmjs.org'
+      - name: Install and Publish
         run: |
           npm install
           npm publish
