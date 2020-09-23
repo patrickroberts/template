@@ -8,12 +8,15 @@
   "browser": "dst/umd/template.js",
   "types": "dst/esm/template.d.ts",
   "scripts": {
+    "clean": "rimraf dst docs",
     "test": "jest",
     "build": "rollup --config --environment NODE_ENV:production",
-    "watch:test": "npm run test -- --watch",
+    "rebuild": "npm run clean && npm run build",
+    "docs": "typedoc src/index.ts",
+    "watch:test": "npm test -- --watch",
     "watch:build": "npm run build -- --environment NODE_ENV:development --watch",
     "watch": "concurrently 'npm:watch:*'",
-    "prepublishOnly": "npm run test && npm run build"
+    "prepublishOnly": "npm test && npm run rebuild && npm run docs"
   },
   "author": "Patrick Roberts",
   "license": "MIT",
@@ -29,6 +32,8 @@
     "rollup": "^2.23.0",
     "rollup-plugin-terser": "^6.1.0",
     "ts-jest": "^26.1.4",
+    "typedoc": "^0.19.2",
+    "typedoc-plugin-sourcefile-url": "^1.0.6",
     "typescript": "^3.9.7"
   },
   "browserslist": {

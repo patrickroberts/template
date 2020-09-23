@@ -21,5 +21,5 @@ npm run watch
 
 ```sh
 # prepublishOnly runs jest and rollup --config
-npm run publish
+npm publish
 ```
