@@ -1,5 +1,7 @@
 # template
 
+![build](https://github.com/patrickroberts/template/workflows/build/badge.svg)
+
 ## Rollup template for TypeScript projects
 
 ### Install
@@ -7,12 +9,12 @@
 ```sh
 npx degit patrickroberts/template my-new-project
 cd my-new-project
+npm install
 ```
 
-### Get Started
+### Getting Started
 
 ```sh
-npm install
 # runs jest --watch and rollup --config --watch
 npm run watch
 ```
