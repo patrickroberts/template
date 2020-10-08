@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "@patrickroberts/template",
   "version": "1.0.0",
   "description": "Rollup template for TypeScript projects",
   "repository": "github:patrickroberts/template",
@@ -8,7 +8,8 @@
   "browser": "dst/umd/template.js",
   "types": "dst/esm/template.d.ts",
   "scripts": {
-    "clean": "rimraf dst docs",
+    "clean": "rimraf dst docs/**/*.md",
+    "lint": "eslint . --ext .js,.ts",
     "test": "jest",
     "build": "rollup --config --environment NODE_ENV:production",
     "rebuild": "npm run clean && npm run build",
@@ -16,37 +17,44 @@
     "watch:test": "npm test -- --watch",
     "watch:build": "npm run build -- --environment NODE_ENV:development --watch",
     "watch": "concurrently 'npm:watch:*'",
-    "prepublishOnly": "npm test && npm run rebuild && npm run docs"
+    "prepublishOnly": "npm run rebuild && npm run lint && npm test && npm run docs"
   },
   "author": "Patrick Roberts",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^14.0.0",
-    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
     "@types/jest": "^26.0.8",
-    "@wessberg/rollup-plugin-ts": "^1.3.1",
-    "babel-jest": "^26.2.2",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "@wessberg/rollup-plugin-ts": "^1.3.5",
+    "babel-jest": "^26.5.2",
     "concurrently": "^5.2.0",
-    "jest": "^26.2.2",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "jest": "^26.5.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.23.0",
-    "rollup-plugin-terser": "^6.1.0",
-    "ts-jest": "^26.1.4",
+    "rollup": "^2.29.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^26.4.1",
     "typedoc": "^0.19.2",
+    "typedoc-plugin-markdown": "^3.0.7",
     "typedoc-plugin-sourcefile-url": "^1.0.6",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.3"
   },
   "browserslist": {
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "current node"
+      "maintained node versions"
     ],
     "production": [
       "defaults"
     ],
     "test": [
-      "current node"
+      "maintained node versions"
     ]
   }
 }
