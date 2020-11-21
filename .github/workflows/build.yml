@@ -20,8 +20,8 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install and Test
         run: |
-          npm install
+          npm ci
           npm run rebuild
-          npm test
+          npm test -- --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

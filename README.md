@@ -43,7 +43,9 @@ npm run watch
 
 ### Continuous Integration
 
-Every push to the `master` branch will trigger an automated build and deploy generated documentation to GitHub Pages from the root of the `gh-pages` branch.
+Every push to the `master` branch will trigger an automated build and deploy generated documentation and code coverage to GitHub Pages from the root of the `gh-pages` branch.
+
+To demonstrate, `template`'s documentation is located at [patrickroberts.github.io/template/globals](https://patrickroberts.github.io/template/globals) and its code coverage is located at [patrickroberts.github.io/template/coverage](https://patrickroberts.github.io/template/coverage).
 
 Every release will publish the package pre-bundled to [npm]. You need to configure your credentials by [creating a secret] with the name `NPM_TOKEN`.
 

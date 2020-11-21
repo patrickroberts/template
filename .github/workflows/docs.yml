@@ -17,8 +17,10 @@ jobs:
           node-version: 12
       - name: Install and Docs
         run: |
-          npm install
+          npm ci
+          npm test -- --ci --coverage
           npm run docs
+          cp -r coverage/lcov-report docs/coverage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy
