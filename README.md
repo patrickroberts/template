@@ -1,8 +1,8 @@
 # template
 
-[![build](https://github.com/patrickroberts/template/workflows/build/badge.svg)](https://github.com/patrickroberts/template/actions?query=workflow:build)
-[![devDependencies](https://david-dm.org/patrickroberts/template/dev-status.svg)](https://david-dm.org/patrickroberts/template?type=dev)
-[![license](https://img.shields.io/github/license/patrickroberts/template.svg)](https://github.com/patrickroberts/template/blob/master/LICENSE)
+[![build](https://badgen.net/github/checks/patrickroberts/template?icon=github&label=build)](https://github.com/patrickroberts/template/actions)
+[![coverage](https://badgen.net/codecov/c/github/patrickroberts/template?icon=codecov&label=coverage)](https://codecov.io/gh/patrickroberts/template)
+[![license](https://badgen.net/github/license/patrickroberts/template)](https://github.com/patrickroberts/template/blob/master/LICENSE)
 
 ## Rollup template for TypeScript projects
 
@@ -22,6 +22,7 @@
 - [TypeDoc]
 - [GitHub Workflows] for
   - Building
+  - Code Coverage
   - Documentation
   - Publishing
 
@@ -43,11 +44,9 @@ npm run watch
 
 ### Continuous Integration
 
-Every push to the `master` branch will trigger an automated build and deploy generated documentation and code coverage to GitHub Pages from the root of the `gh-pages` branch.
+Every push to the `master` branch will trigger an automated build and deploy generated documentation to GitHub Pages from the root of the `gh-pages` branch.
 
-To demonstrate, `template`'s documentation is located at [patrickroberts.github.io/template/globals](https://patrickroberts.github.io/template/globals) and its code coverage is located at [patrickroberts.github.io/template/coverage](https://patrickroberts.github.io/template/coverage).
-
-Every release will publish the package pre-bundled to [npm]. You need to configure your credentials by [creating a secret] with the name `NPM_TOKEN`.
+Every release will publish the package pre-bundled to [npm]. You need to configure your credentials by [creating a secret] with the name [`NPM_TOKEN`].
 
 [TypeScript]: https://www.typescriptlang.org/
 [Babel]: https://babeljs.io/
@@ -59,3 +58,4 @@ Every release will publish the package pre-bundled to [npm]. You need to configu
 [GitHub Workflows]: https://docs.github.com/actions
 [npm]: https://www.npmjs.com/
 [creating a secret]: https://docs.github.com/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository
+[`NPM_TOKEN`]: https://docs.npmjs.com/using-private-packages-in-a-ci-cd-workflow
