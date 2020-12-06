@@ -16,10 +16,16 @@
     "jest"
   ],
   "rules": {
-    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "@typescript-eslint/consistent-type-definitions": [
+      "error",
+      "interface"
+    ],
+    "@typescript-eslint/lines-between-class-members": "error",
     "@typescript-eslint/member-delimiter-style": "error",
+    "@typescript-eslint/no-dupe-class-members": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-shadow": "error",
     "@typescript-eslint/semi": "error",
     "import/extensions": [
       "error",
@@ -37,6 +43,16 @@
         ]
       }
     ],
+    "lines-between-class-members": "off",
+    "no-bitwise": "off",
+    "no-dupe-class-members": "off",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-shadow": "off",
     "no-unused-vars": "off",
     "semi": "off"
   },
