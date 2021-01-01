@@ -1,7 +1,7 @@
 {
   "disableOutputCheck": true,
   "hideProjectName": true,
-  "mode": "file",
+  "name": "template",
   "out": "docs",
   "sourcefile-url-prefix": "https://github.com/patrickroberts/template/blob/master/src/"
 }
