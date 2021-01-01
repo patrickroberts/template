@@ -26,8 +26,23 @@
     "@typescript-eslint/no-dupe-class-members": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-redeclare": "error",
     "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ],
     "@typescript-eslint/semi": "error",
+    "@typescript-eslint/space-before-function-paren": [
+      "error",
+      {
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
     "import/extensions": [
       "error",
       "never",
@@ -53,14 +68,32 @@
         "props": false
       }
     ],
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-redeclare": "off",
     "no-shadow": "off",
     "no-unused-vars": "off",
-    "semi": "off"
+    "no-use-before-define": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true
+      }
+    ],
+    "semi": "off",
+    "space-before-function-paren": "off"
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".ts"]
+        "extensions": [
+          ".js",
+          ".ts"
+        ]
       }
     }
   }
