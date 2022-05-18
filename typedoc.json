@@ -1,6 +1,7 @@
 {
   "allReflectionsHaveOwnDocument": true,
-  "disableOutputCheck": true,
+  "cleanOutputDir": false,
+  "githubPages": false,
   "name": "template",
   "out": "docs",
   "preserveWatchOutput": true,

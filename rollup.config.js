@@ -12,69 +12,42 @@ const browserslist = pkg.browserslist[process.env.NODE_ENV];
 
 const keys = (deps) => (deps == null ? [] : Object.keys(deps).map((dep) => new RegExp(`^${dep}`)));
 
-export default [
-  {
-    input,
-    external: [
-      ...keys(pkg.dependencies),
-      ...keys(pkg.peerDependencies),
-    ],
-    output: [
-      {
-        file: pkg.main,
-        format: 'cjs',
-        sourcemap: production,
-        exports: 'auto',
-      },
-      {
-        file: pkg.module,
-        format: 'esm',
-        sourcemap: production,
-      },
-    ],
-    plugins: [
-      resolve(),
-      commonjs(),
-      typescript({
-        transpiler: 'babel',
-        browserslist,
-      }),
-      production && terser({
-        output: {
-          comments: false,
-        },
-      }),
-    ],
-    watch: {
-      clearScreen: false,
+export default {
+  input,
+  external: keys(pkg.peerDependencies),
+  output: [
+    {
+      file: pkg.main,
+      format: 'cjs',
+      sourcemap: production,
+      exports: 'auto',
     },
-  },
-  {
-    input,
-    external: keys(pkg.peerDependencies),
-    output: {
+    {
+      file: pkg.module,
+      format: 'esm',
+      sourcemap: production,
+    },
+    {
       file: pkg.browser,
       format: 'umd',
       name,
       sourcemap: production,
     },
-    plugins: [
-      resolve({
-        browser: true,
-      }),
-      commonjs(),
-      typescript({
-        transpiler: 'babel',
-        browserslist,
-      }),
-      production && terser({
-        output: {
-          comments: false,
-        },
-      }),
-    ],
-    watch: {
-      clearScreen: false,
-    },
+  ],
+  plugins: [
+    resolve(),
+    commonjs(),
+    typescript({
+      transpiler: 'babel',
+      browserslist,
+    }),
+    production && terser({
+      output: {
+        comments: false,
+      },
+    }),
+  ],
+  watch: {
+    clearScreen: false,
   },
-];
+};
